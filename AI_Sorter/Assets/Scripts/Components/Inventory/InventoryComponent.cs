@@ -1,8 +1,11 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryComponent : Component
 {
+	public event Action<List<ItemSlot>> OnSlotsModified = null; 
+
 	[SerializeField] private List<ItemSlot> slots = new List<ItemSlot>();
 
 	public List<ItemSlot> GetSlots => slots;
@@ -24,6 +27,7 @@ public class InventoryComponent : Component
 	{
 		if (Contains(_item, out int _index)) ++slots[_index].Count;
 		else slots.Add(new ItemSlot(_item));
+		OnSlotsModified?.Invoke(slots);
 	}
 
 	public void RemoveItem(ItemSlot _slot)
@@ -31,6 +35,7 @@ public class InventoryComponent : Component
 		--_slot.Count;
 		if (_slot.Count > 0) return;
 		slots.Remove(_slot);
+		OnSlotsModified?.Invoke(slots);
 	}
 
 	public void RemoveItem(int _index)

@@ -6,7 +6,8 @@ public class Cursor : Singleton<Cursor>
 	public event Action<Vector3> OnGroundHit = null;
 
 	[SerializeField] private Camera sceneCamera = null;
-	[SerializeField] private LayerMask interactLayer = 0;
+	[SerializeField] private LayerMask entityLayer = 0,
+		groundLayer = 0;
 	[SerializeField] private float range = 200.0f;
 
 	protected override void PostInit()
@@ -18,8 +19,16 @@ public class Cursor : Singleton<Cursor>
 	private void OnInputClick(bool _value)
 	{
 		if (!_value) return;
-		bool _hit = Physics.Raycast(sceneCamera.ScreenPointToRay(Input.mousePosition), out RaycastHit _hitInfo, range, interactLayer);
-		if (!_hit) return;
-		OnGroundHit?.Invoke(_hitInfo.point);
+		Ray _ray = sceneCamera.ScreenPointToRay(Input.mousePosition);
+		if (Physics.Raycast(_ray, out RaycastHit _hitInfo, range, entityLayer))
+		{
+			_hitInfo.transform.GetComponent<Entity>().OnCursorClick();
+			return;
+		}
+		if (Physics.Raycast(_ray, out _hitInfo, range, groundLayer))
+		{
+			OnGroundHit?.Invoke(_hitInfo.point);
+			return;
+		}
 	}
 }

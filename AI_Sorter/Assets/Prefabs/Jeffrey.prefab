@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 469489279349079396}
   - component: {fileID: 2193990514561462931}
   - component: {fileID: 6825769189018849851}
-  m_Layer: 0
+  - component: {fileID: 659534923651742325}
+  m_Layer: 7
   m_Name: Jeffrey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,6 +62,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entity: {fileID: 2193990514561462931}
   slots: []
+--- !u!136 &659534923651742325
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469489279349079399}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!1 &4603459746867375223
 GameObject:
   m_ObjectHideFlags: 0
