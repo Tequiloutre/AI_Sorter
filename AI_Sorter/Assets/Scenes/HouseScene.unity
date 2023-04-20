@@ -5300,6 +5300,7 @@ GameObject:
   - component: {fileID: 207634899}
   - component: {fileID: 207634900}
   - component: {fileID: 207634901}
+  - component: {fileID: 207634902}
   m_Layer: 0
   m_Name: ===MANAGERS===
   m_TagString: Untagged
@@ -5366,6 +5367,19 @@ MonoBehaviour:
   parent: {fileID: 1491145156}
   itemToSpawn: {fileID: 986420441010419193, guid: 5f8dc689d4abb9047aeedb98956365af, type: 3}
   spawnHeight: 1
+--- !u!114 &207634902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207634897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30a184bfd4f6f844da8a93f551d294fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: {fileID: 0}
 --- !u!1001 &207662212
 PrefabInstance:
   m_ObjectHideFlags: 0

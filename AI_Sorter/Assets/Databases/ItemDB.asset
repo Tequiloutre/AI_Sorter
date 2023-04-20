@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39ff7016063d02a4886e0284e83679b3, type: 3}
+  m_Name: ItemDB
+  m_EditorClassIdentifier: 
+  content:
+  - id: Can
+    item:
+      itemName: Can
+      item: {fileID: 8472476261952510098, guid: 5f8dc689d4abb9047aeedb98956365af, type: 3}
