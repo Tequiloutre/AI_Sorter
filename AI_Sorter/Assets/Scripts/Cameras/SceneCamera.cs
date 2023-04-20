@@ -24,11 +24,17 @@ public class SceneCamera : MonoBehaviour
 	private void LateUpdate()
 	{
 		MoveToTarget();
+		RotateToTarget();
 	}
 
 	private void MoveToTarget()
 	{
 		Vector3 _direction = Quaternion.Euler(verticalAngle, horizontalAngle, 0.0f) * Vector3.forward;
 		transform.position = target.position - _direction.normalized * distance;
+	}
+
+	private void RotateToTarget()
+	{
+		transform.rotation = Quaternion.LookRotation(target.position - transform.position, Vector3.up);
 	}
 }
