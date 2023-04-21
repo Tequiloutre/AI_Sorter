@@ -17,3 +17,4 @@ MonoBehaviour:
     item:
       itemName: Can
       item: {fileID: 8472476261952510098, guid: 5f8dc689d4abb9047aeedb98956365af, type: 3}
+      sprite: {fileID: 21300000, guid: 5923a2b955f4f4b4290e3df5c4990219, type: 3}
