@@ -4,6 +4,7 @@ using UnityEngine;
 
 public static class PreviewGenerator
 {
+	#if UNITY_EDITOR
 	[MenuItem("Assets/Create/Sprite Preview", false, priority = 310)]
 	private static void GeneratePreviewSprite()
 	{
@@ -26,4 +27,5 @@ public static class PreviewGenerator
 		
 		AssetDatabase.Refresh();
 	}
+	#endif
 }

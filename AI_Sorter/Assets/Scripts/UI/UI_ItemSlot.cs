@@ -18,8 +18,7 @@ public class UI_ItemSlot : MonoBehaviour
 	public void SetContent(ItemSlot _slot)
 	{
 		imageItem.gameObject.SetActive(true);
-		Texture2D _texture = AssetPreview.GetAssetPreview(_slot.Item.GetItem.gameObject);
-		imageItem.sprite = Sprite.Create(_texture, new Rect(0, 0, _texture.width, _texture.height), new Vector2(0.5f, 0.5f));
+		imageItem.sprite = _slot.Item.GetSprite;
 		if (_slot.Count <= 1) return;
 		imageCount.SetActive(true);
 		textCount.text = _slot.Count.ToString();
