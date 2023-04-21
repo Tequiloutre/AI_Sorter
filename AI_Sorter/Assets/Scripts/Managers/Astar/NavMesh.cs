@@ -11,17 +11,19 @@ public class NavMesh : Singleton<NavMesh>
 		obstacleLayer = 0;
 
 	private Vector3 origin = Vector3.zero;
-	[HideInInspector, SerializeField]
-	private List<Vector3> points = new List<Vector3>();
+	[HideInInspector, SerializeField] private List<NavPoint> points;
+	
+	private int XCount => (int) (size.x / gap);
+	private int ZCount => (int) (size.z / gap);
 
 	public bool GetRandomPoint(out Vector3 _point)
 	{
-		if (points.Count == 0)
+		if (XCount == 0 || ZCount == 0)
 		{
 			_point = Vector3.zero;
 			return false;
 		}
-		_point = points[Random.Range(0, points.Count)];
+		_point = points[Random.Range(0, points.Count)].GetPosition;
 		return true;
 	}
 	
@@ -30,24 +32,35 @@ public class NavMesh : Singleton<NavMesh>
 		RefreshOrigin();
 		
 		points.Clear();
-
-		Vector3 _max = origin + new Vector3(size.x, size.y, size.z);
 		
-		float _z = origin.z;
-		while (_z <= _max.z)
+		for (int z = 0; z < ZCount; ++z)
 		{
-			float _x = origin.x;
-			while (_x <= _max.x)
+			for (int x = 0; x < XCount; ++x)
 			{
-				if (Physics.Raycast(new Vector3(_x, _max.y, _z), Vector3.down, out RaycastHit _hitInfo, size.y, groundLayer))
+				Vector3 _position = origin + new Vector3(x * gap, size.y, z * gap);
+				if (Physics.Raycast(_position, Vector3.down, out RaycastHit _hitInfo, size.y, groundLayer))
 				{
-					if (!Physics.SphereCast(new Vector3(_x, _max.y, _z), minObstacleDistance, Vector3.down, out RaycastHit _hitInfoObstacle, size.y, obstacleLayer))
-						points.Add(_hitInfo.point);
+					if (!Physics.SphereCast(_position, minObstacleDistance, Vector3.down, out RaycastHit _hitInfoObstacle, size.y, obstacleLayer))
+					{
+						NavPoint _point = new NavPoint(_hitInfo.point);
+						AddNeighborAt(_point, x - 1, z);
+						AddNeighborAt(_point, x + 1, z);
+						AddNeighborAt(_point, x, z - 1);
+						AddNeighborAt(_point, x, z + 1);
+						points.Add(_point);
+					}
 				}
-				_x += gap;
 			}
-			_z += gap;
 		}
+	}
+
+	private void AddNeighborAt(NavPoint _point, int _x, int _z)
+	{
+		int _neighborIndex = _z * XCount + _x;
+		if (_neighborIndex < 0 || _neighborIndex >= points.Count) return;
+		NavPoint _neighbor = points[_z * XCount + _x];
+		if (_neighbor == null) return;
+		_point.AddNeighbor(_neighbor);
 	}
 
 	private void RefreshOrigin()
@@ -68,8 +81,17 @@ public class NavMesh : Singleton<NavMesh>
 		Gizmos.color = Color.red;
 		Gizmos.DrawSphere(origin, 0.1f);
 
-		int _count = points.Count;
-		for (int i = 0; i < _count; ++i)
-			Gizmos.DrawWireSphere(points[i], 0.1f);
+		if (points.Count == 0) return;
+		for (int z = 0; z < ZCount; ++z)
+		{
+			for (int x = 0; x < XCount; ++x)
+			{
+				int _index = z * XCount + x;
+				if (_index < 0 || _index >= points.Count) continue;
+				NavPoint _point = points[_index];
+				if (_point == null) continue;
+				Gizmos.DrawWireSphere(_point.GetPosition, 0.1f);
+			}
+		}
 	}
 }
