@@ -51368,7 +51368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca4194a491aa0e43ac79952247e6a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 1
+  debug: 0
   size: {x: 20, y: 5, z: 20}
   gap: 0.6
   minObstacleDistance: 0.3
