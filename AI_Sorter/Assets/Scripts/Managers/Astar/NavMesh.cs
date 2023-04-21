@@ -11,7 +11,19 @@ public class NavMesh : Singleton<NavMesh>
 		obstacleLayer = 0;
 
 	private Vector3 origin = Vector3.zero;
+	[HideInInspector, SerializeField]
 	private List<Vector3> points = new List<Vector3>();
+
+	public bool GetRandomPoint(out Vector3 _point)
+	{
+		if (points.Count == 0)
+		{
+			_point = Vector3.zero;
+			return false;
+		}
+		_point = points[Random.Range(0, points.Count)];
+		return true;
+	}
 	
 	public void GenerateGround()
 	{
