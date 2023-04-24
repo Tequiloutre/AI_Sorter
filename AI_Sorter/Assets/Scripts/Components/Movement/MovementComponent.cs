@@ -26,6 +26,18 @@ public class MovementComponent : Component
 		// MoveTowards(Vector3.down * (9.81f * Time.deltaTime), true);
 	}
 
+	public bool CheckSafeMove(Vector3 _position, Vector3 _targetPosition)
+	{
+		Vector3 _direction = _targetPosition - _position;
+		
+		float _height = capsule.height - 0.02f;
+		float _radius = capsule.radius;
+		Vector3 _p1 = _position + capsule.center - Vector3.up * (_height / 2.0f - _radius - 0.01f);
+		Vector3 _p2 = _p1 + Vector3.up * (_height - _radius * 2.0f - 0.01f);
+
+		return !Physics.CapsuleCast(_p1, _p2, _radius, _direction.normalized, _direction.magnitude + 0.02f, terrainLayer);
+	}
+
 	public void Move(Vector3 _direction)
 	{
 		if (!canMove) _direction = Vector3.zero;

@@ -5925,7 +5925,7 @@ MonoBehaviour:
   sceneCamera: {fileID: 802556339}
   entityLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 512
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -14798,7 +14798,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4214813950619714, guid: b3fd1e67e3c147a4e97e17468e4b7473, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.753
+      value: -1.863
       objectReference: {fileID: 0}
     - target: {fileID: 4214813950619714, guid: b3fd1e67e3c147a4e97e17468e4b7473, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14810,23 +14810,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4214813950619714, guid: b3fd1e67e3c147a4e97e17468e4b7473, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.57151884
+      value: 0.57151896
       objectReference: {fileID: 0}
     - target: {fileID: 4214813950619714, guid: b3fd1e67e3c147a4e97e17468e4b7473, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4214813950619714, guid: b3fd1e67e3c147a4e97e17468e4b7473, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.82058895
+      value: -0.8205888
       objectReference: {fileID: 0}
     - target: {fileID: 4214813950619714, guid: b3fd1e67e3c147a4e97e17468e4b7473, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4214813950619714, guid: b3fd1e67e3c147a4e97e17468e4b7473, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 78.200005
+      value: 249.712
       objectReference: {fileID: 0}
     - target: {fileID: 4484560568060284, guid: b3fd1e67e3c147a4e97e17468e4b7473, type: 3}
       propertyPath: m_RootOrder
@@ -14871,6 +14871,14 @@ PrefabInstance:
     - target: {fileID: 4484560568060284, guid: b3fd1e67e3c147a4e97e17468e4b7473, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 65125975896314316, guid: b3fd1e67e3c147a4e97e17468e4b7473, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 65344086452234834, guid: b3fd1e67e3c147a4e97e17468e4b7473, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3fd1e67e3c147a4e97e17468e4b7473, type: 3}
@@ -33492,6 +33500,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 276958a9a3f66234987cbd91912cc34f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1140044972 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 213614673678102144, guid: 2c0aa17f586e6144695f226782c2eb5f, type: 3}
+  m_PrefabInstance: {fileID: 469489279656264350}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79299470755ccc4094e0e6b4143299d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1140808311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39357,7 +39376,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1117720635668036, guid: f2e4ece45a19ec841a2d3a81557072df, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1660965296716306, guid: f2e4ece45a19ec841a2d3a81557072df, type: 3}
       propertyPath: m_Layer
@@ -39426,6 +39445,30 @@ PrefabInstance:
     - target: {fileID: 4334221699991704, guid: f2e4ece45a19ec841a2d3a81557072df, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 64061860132056360, guid: f2e4ece45a19ec841a2d3a81557072df, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64076005167207080, guid: f2e4ece45a19ec841a2d3a81557072df, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64229754403298404, guid: f2e4ece45a19ec841a2d3a81557072df, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64380500873637776, guid: f2e4ece45a19ec841a2d3a81557072df, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65317094143469982, guid: f2e4ece45a19ec841a2d3a81557072df, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65472779078517584, guid: f2e4ece45a19ec841a2d3a81557072df, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2e4ece45a19ec841a2d3a81557072df, type: 3}
@@ -51368,10 +51411,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca4194a491aa0e43ac79952247e6a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 1
+  debug: 0
   size: {x: 20, y: 2.5, z: 20}
   gap: 0.5
   minObstacleDistance: 0.4
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 384
   points:
   - id: 0
     position: {x: 0, y: 0, z: 0}
@@ -53567,7 +53616,7 @@ MonoBehaviour:
     position: {x: -6.25, y: 0.13968253, z: -16.75}
     neighbors: d9020000b2020000db02000002030000
   - id: 731
-    position: {x: -5.75, y: 0.13968253, z: -16.75}
+    position: {x: -5.749998, y: 0.2628959, z: -16.75}
     neighbors: da020000b302000003030000
   - id: 0
     position: {x: 0, y: 0, z: 0}
@@ -53687,17 +53736,17 @@ MonoBehaviour:
     position: {x: -6.25, y: 0.13968253, z: -16.25}
     neighbors: 01030000da020000030300002a030000
   - id: 771
-    position: {x: -5.75, y: 0.13968253, z: -16.25}
-    neighbors: 02030000db0200002b030000
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
+    position: {x: -5.7499986, y: 0.2628959, z: -16.25}
+    neighbors: 02030000db020000040300002b030000
+  - id: 772
+    position: {x: -5.2499986, y: 0.32498378, z: -16.249998}
+    neighbors: 0303000005030000
+  - id: 773
+    position: {x: -4.75, y: 0.5000001, z: -16.25}
+    neighbors: 0403000006030000
   - id: 774
     position: {x: -4.25, y: 0.5000001, z: -16.25}
-    neighbors: de02000007030000
+    neighbors: 05030000de02000007030000
   - id: 775
     position: {x: -3.75, y: 0.5000001, z: -16.25}
     neighbors: 06030000df02000008030000
@@ -53807,7 +53856,7 @@ MonoBehaviour:
     position: {x: -6.25, y: 0.13968253, z: -15.75}
     neighbors: 29030000020300002b03000052030000
   - id: 811
-    position: {x: -5.75, y: 0.13968253, z: -15.75}
+    position: {x: -5.7499986, y: 0.2628959, z: -15.749998}
     neighbors: 2a0300000303000053030000
   - id: 0
     position: {x: 0, y: 0, z: 0}
@@ -54390,19 +54439,19 @@ MonoBehaviour:
     neighbors: 
   - id: 1005
     position: {x: -8.75, y: 0.13968253, z: -13.25}
-    neighbors: c5030000ee030000
+    neighbors: c5030000ee03000015040000
   - id: 1006
     position: {x: -8.25, y: 0.13968253, z: -13.25}
-    neighbors: ed030000c6030000ef030000
+    neighbors: ed030000c6030000ef03000016040000
   - id: 1007
     position: {x: -7.75, y: 0.13968253, z: -13.25}
-    neighbors: ee030000c7030000f0030000
+    neighbors: ee030000c7030000f003000017040000
   - id: 1008
     position: {x: -7.25, y: 0.13968253, z: -13.25}
-    neighbors: ef030000c8030000f1030000
+    neighbors: ef030000c8030000f103000018040000
   - id: 1009
     position: {x: -6.75, y: 0.13968253, z: -13.25}
-    neighbors: f0030000c9030000
+    neighbors: f0030000c903000019040000
   - id: 0
     position: {x: 0, y: 0, z: 0}
     neighbors: 
@@ -54508,21 +54557,21 @@ MonoBehaviour:
   - id: 0
     position: {x: 0, y: 0, z: 0}
     neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
+  - id: 1045
+    position: {x: -8.75, y: 0.13968253, z: -12.75}
+    neighbors: ed030000160400003d040000
+  - id: 1046
+    position: {x: -8.25, y: 0.13968253, z: -12.75}
+    neighbors: 15040000ee030000170400003e040000
+  - id: 1047
+    position: {x: -7.75, y: 0.13968253, z: -12.75}
+    neighbors: 16040000ef030000180400003f040000
+  - id: 1048
+    position: {x: -7.25, y: 0.13968253, z: -12.75}
+    neighbors: 17040000f00300001904000040040000
+  - id: 1049
+    position: {x: -6.75, y: 0.13968253, z: -12.75}
+    neighbors: 18040000f103000041040000
   - id: 0
     position: {x: 0, y: 0, z: 0}
     neighbors: 
@@ -54628,21 +54677,21 @@ MonoBehaviour:
   - id: 0
     position: {x: 0, y: 0, z: 0}
     neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
+  - id: 1085
+    position: {x: -8.75, y: 0.13968253, z: -12.25}
+    neighbors: 150400003e04000065040000
+  - id: 1086
+    position: {x: -8.25, y: 0.13968253, z: -12.25}
+    neighbors: 3d040000160400003f04000066040000
+  - id: 1087
+    position: {x: -7.75, y: 0.13968253, z: -12.25}
+    neighbors: 3e040000170400004004000067040000
+  - id: 1088
+    position: {x: -7.25, y: 0.13968253, z: -12.25}
+    neighbors: 3f040000180400004104000068040000
+  - id: 1089
+    position: {x: -6.75, y: 0.13968253, z: -12.25}
+    neighbors: 400400001904000069040000
   - id: 0
     position: {x: 0, y: 0, z: 0}
     neighbors: 
@@ -54745,27 +54794,27 @@ MonoBehaviour:
   - id: 0
     position: {x: 0, y: 0, z: 0}
     neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
+  - id: 1124
+    position: {x: -9.25, y: 0.13968253, z: -11.75}
+    neighbors: 650400008c040000
+  - id: 1125
+    position: {x: -8.75, y: 0.13968253, z: -11.75}
+    neighbors: 640400003d040000660400008d040000
+  - id: 1126
+    position: {x: -8.25, y: 0.13968253, z: -11.75}
+    neighbors: 650400003e040000670400008e040000
+  - id: 1127
+    position: {x: -7.75, y: 0.13968253, z: -11.75}
+    neighbors: 660400003f040000680400008f040000
+  - id: 1128
+    position: {x: -7.25, y: 0.13968253, z: -11.75}
+    neighbors: 67040000400400006904000090040000
+  - id: 1129
+    position: {x: -6.75, y: 0.13968253, z: -11.75}
+    neighbors: 68040000410400006a04000091040000
+  - id: 1130
+    position: {x: -6.25, y: 0.13968253, z: -11.75}
+    neighbors: 6904000092040000
   - id: 0
     position: {x: 0, y: 0, z: 0}
     neighbors: 
@@ -54865,27 +54914,27 @@ MonoBehaviour:
   - id: 0
     position: {x: 0, y: 0, z: 0}
     neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
+  - id: 1164
+    position: {x: -9.25, y: 0.13968253, z: -11.25}
+    neighbors: 640400008d040000b4040000
+  - id: 1165
+    position: {x: -8.75, y: 0.13968253, z: -11.25}
+    neighbors: 8c040000650400008e040000b5040000
+  - id: 1166
+    position: {x: -8.25, y: 0.13968253, z: -11.25}
+    neighbors: 8d040000660400008f040000b6040000
+  - id: 1167
+    position: {x: -7.75, y: 0.13968253, z: -11.25}
+    neighbors: 8e0400006704000090040000b7040000
+  - id: 1168
+    position: {x: -7.25, y: 0.13968253, z: -11.25}
+    neighbors: 8f0400006804000091040000b8040000
+  - id: 1169
+    position: {x: -6.75, y: 0.13968253, z: -11.25}
+    neighbors: 900400006904000092040000b9040000
+  - id: 1170
+    position: {x: -6.25, y: 0.13968253, z: -11.25}
+    neighbors: 910400006a040000ba040000
   - id: 0
     position: {x: 0, y: 0, z: 0}
     neighbors: 
@@ -54985,30 +55034,30 @@ MonoBehaviour:
   - id: 0
     position: {x: 0, y: 0, z: 0}
     neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
-  - id: 0
-    position: {x: 0, y: 0, z: 0}
-    neighbors: 
+  - id: 1204
+    position: {x: -9.25, y: 0.13968253, z: -10.75}
+    neighbors: 8c040000b5040000
+  - id: 1205
+    position: {x: -8.75, y: 0.13968253, z: -10.75}
+    neighbors: b40400008d040000b6040000
+  - id: 1206
+    position: {x: -8.25, y: 0.13968253, z: -10.75}
+    neighbors: b50400008e040000b7040000
+  - id: 1207
+    position: {x: -7.75, y: 0.13968253, z: -10.75}
+    neighbors: b60400008f040000b8040000
+  - id: 1208
+    position: {x: -7.25, y: 0.13968253, z: -10.75}
+    neighbors: b704000090040000b9040000
+  - id: 1209
+    position: {x: -6.75, y: 0.13968253, z: -10.75}
+    neighbors: b804000091040000ba040000
+  - id: 1210
+    position: {x: -6.25, y: 0.13968253, z: -10.75}
+    neighbors: b904000092040000bb040000
+  - id: 1211
+    position: {x: -5.75, y: 0.13968253, z: -10.75}
+    neighbors: ba040000
   - id: 0
     position: {x: 0, y: 0, z: 0}
     neighbors: 
@@ -56173,12 +56222,6 @@ MonoBehaviour:
   - id: 0
     position: {x: 0, y: 0, z: 0}
     neighbors: 
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 384
 --- !u!1001 &1783359625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57659,6 +57702,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 909560931}
     m_Modifications:
+    - target: {fileID: 1348947109254792, guid: 58046ab3e4897b94a8a0c44e25d45c08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4960774318084524, guid: 58046ab3e4897b94a8a0c44e25d45c08, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -70363,6 +70410,10 @@ PrefabInstance:
       propertyPath: debug
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 213614673678102144, guid: 2c0aa17f586e6144695f226782c2eb5f, type: 3}
+      propertyPath: maxIdleTime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 469489279349079396, guid: 2c0aa17f586e6144695f226782c2eb5f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -70411,6 +70462,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jeffrey
       objectReference: {fileID: 0}
+    - target: {fileID: 2193990514561462931, guid: 2c0aa17f586e6144695f226782c2eb5f, type: 3}
+      propertyPath: brain
+      value: 
+      objectReference: {fileID: 1140044972}
     - target: {fileID: 8200103481544624294, guid: 2c0aa17f586e6144695f226782c2eb5f, type: 3}
       propertyPath: rotateSpeed
       value: 300
