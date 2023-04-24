@@ -4,6 +4,7 @@ public class State_Patrol : State
 {
 	private BrainComponent brain = null;
 	private MovementComponent movement = null;
+	private SightComponent sight = null;
 	private Vector3 targetPosition = Vector3.zero;
 	private bool isWaiting = false;
 	private float idleTime = 0.0f,
@@ -14,6 +15,7 @@ public class State_Patrol : State
 		base.OnStateEnter(animator, stateInfo, layerIndex);
 		brain = character.GetBrain;
 		movement = character.GetMovement;
+		sight = character.GetSight;
 		targetPosition = character.transform.position;
 	}
 
@@ -38,6 +40,7 @@ public class State_Patrol : State
 			if (!GetNewTargetPosition()) return;
 		}
 		movement.MoveTowards((targetPosition.ResetY() - character.transform.position.ResetY()).normalized * (movement.GetMoveSpeed * Time.deltaTime));
+		sight.SearchTarget();
 	}
 
 	private bool GetNewTargetPosition()

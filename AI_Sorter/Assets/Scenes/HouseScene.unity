@@ -70466,6 +70466,10 @@ PrefabInstance:
       propertyPath: brain
       value: 
       objectReference: {fileID: 1140044972}
+    - target: {fileID: 7380253828791647242, guid: 2c0aa17f586e6144695f226782c2eb5f, type: 3}
+      propertyPath: debug
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8200103481544624294, guid: 2c0aa17f586e6144695f226782c2eb5f, type: 3}
       propertyPath: rotateSpeed
       value: 300
