@@ -3,7 +3,6 @@ using UnityEngine;
 public class Item : Entity
 {
 	[SerializeField] private string item = "Item";
-	[SerializeField] private bool canTake = true;
 
 	public override void Interact(Entity _entity)
 	{

@@ -1,24 +1,29 @@
 using System;
 using UnityEngine;
 
-public abstract class State : StateMachineBehaviour
+[Serializable]
+public abstract class State
 {
 	public event Action<State> OnStateChanged = null;
 
-	[SerializeField] private string stateName = "State";
+	[SerializeField] protected NPCState id = NPCState.None;
 
+	protected bool isActive = false;
 	protected Character character = null;
+	
+	public NPCState GetID => id;
 
-	public string Name => stateName;
+	public void SetActive(bool _value) => isActive = _value;
 	
 	public void Init(BrainComponent _brain)
 	{
 		character = _brain.GetCharacter;
 	}
 
-	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+	public virtual void Enter()
 	{
-		base.OnStateEnter(animator, stateInfo, layerIndex);
 		OnStateChanged?.Invoke(this);
 	}
+	public virtual void Update() { }
+	public virtual void Exit() { }
 }

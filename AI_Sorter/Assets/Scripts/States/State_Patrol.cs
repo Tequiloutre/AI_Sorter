@@ -1,4 +1,5 @@
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class State_Patrol : State
 {
@@ -10,18 +11,18 @@ public class State_Patrol : State
 	private float idleTime = 0.0f,
 		targetIdleTime = 1.0f;
 
-	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+	public override void Enter()
 	{
-		base.OnStateEnter(animator, stateInfo, layerIndex);
+		base.Enter();
 		brain = character.GetBrain;
 		movement = character.GetMovement;
 		sight = character.GetSight;
 		targetPosition = character.transform.position;
-	}
+	} 
 
-	public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+	public override void Update()
 	{
-		base.OnStateUpdate(animator, stateInfo, layerIndex);
+		base.Update();
 		if (CheckPosition())
 		{
 			if (!isWaiting)

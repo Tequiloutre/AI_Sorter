@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 659534923651742325}
   - component: {fileID: 4381443121476273256}
   - component: {fileID: 2193990514561462931}
-  - component: {fileID: 213614673678102144}
+  - component: {fileID: 5551037997211817195}
   - component: {fileID: 8200103481544624294}
   - component: {fileID: 6825769189018849851}
   - component: {fileID: 7380253828791647242}
@@ -61,7 +61,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469489279349079399}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: dabe5a6317bcfe44ca192d57fe56894d, type: 2}
   m_CullingMode: 0
@@ -86,11 +86,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1029a554df4eb794a9f6ceb600a1a806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brain: {fileID: 213614673678102144}
+  entityName: Character
+  brain: {fileID: 5551037997211817195}
   movement: {fileID: 8200103481544624294}
   inventory: {fileID: 6825769189018849851}
   sight: {fileID: 7380253828791647242}
---- !u!114 &213614673678102144
+--- !u!114 &5551037997211817195
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,12 +100,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 469489279349079399}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d79299470755ccc4094e0e6b4143299d, type: 3}
+  m_Script: {fileID: 11500000, guid: 30460d08740a4934eb65e15624889266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
   entity: {fileID: 2193990514561462931}
-  fsm: {fileID: 4381443121476273256}
   minIdleTime: 1
   maxIdleTime: 5
 --- !u!114 &8200103481544624294
@@ -167,6 +167,7 @@ MonoBehaviour:
   detectionlayer:
     serializedVersion: 2
     m_Bits: 512
+  targets: []
 --- !u!1 &4603459746867375223
 GameObject:
   m_ObjectHideFlags: 0
