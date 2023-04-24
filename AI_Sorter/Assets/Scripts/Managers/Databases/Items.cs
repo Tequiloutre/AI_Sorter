@@ -9,7 +9,7 @@ public struct ItemDBEntry
 	public ItemData item;
 }
 
-[CreateAssetMenu(fileName = "ItemDB", menuName = "DB/Items", order = 100)]
+[CreateAssetMenu(fileName = "ItemDB", menuName = "Custom/DB/Items", order = 100)]
 public class Items : ScriptableObject
 {
 	[SerializeField] private ItemDBEntry[] content;
