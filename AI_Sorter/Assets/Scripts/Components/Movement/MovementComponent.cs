@@ -49,7 +49,8 @@ public class MovementComponent : Component
 			return;
 		}
 		animator.SetBool("IsMoving", true);
-		transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(_direction), rotateSpeed * Time.deltaTime);
+		if (_direction != Vector3.zero)
+			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(_direction), rotateSpeed * Time.deltaTime);
 	}
 
 	public void MoveTowards(Vector3 _direction, bool _slide = true)

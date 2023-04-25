@@ -7,11 +7,13 @@ public class Character : Entity
 	[SerializeField] private MovementComponent movement = null;
 	[SerializeField] private InventoryComponent inventory = null;
 	[SerializeField] private SightComponent sight = null;
+	[SerializeField] private InteractionComponent interaction = null;
 
 	public BrainComponent GetBrain => brain;
 	public MovementComponent GetMovement => movement;
 	public InventoryComponent GetInventory => inventory;
 	public SightComponent GetSight => sight;
+	public InteractionComponent GetInteraction => interaction;
 
 	public override void Interact(Entity _entity)
 	{

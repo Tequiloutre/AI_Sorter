@@ -17,6 +17,7 @@ public class SightComponent : Component
 	private bool targetDetected = false;
 
 	private Vector3 GetOriginPosition => origin.position.Offset(offset, origin);
+	public List<Collider> GetTargets => targets;
 
 	public void SearchTarget()
 	{

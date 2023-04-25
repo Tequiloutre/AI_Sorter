@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8200103481544624294}
   - component: {fileID: 6825769189018849851}
   - component: {fileID: 7380253828791647242}
+  - component: {fileID: 2166852845034860055}
   m_Layer: 9
   m_Name: Jeffrey
   m_TagString: Untagged
@@ -86,11 +87,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1029a554df4eb794a9f6ceb600a1a806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityName: Character
+  entityName: Jeffrey
   brain: {fileID: 5551037997211817195}
   movement: {fileID: 8200103481544624294}
   inventory: {fileID: 6825769189018849851}
   sight: {fileID: 7380253828791647242}
+  interaction: {fileID: 2166852845034860055}
 --- !u!114 &5551037997211817195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +170,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   targets: []
+--- !u!114 &2166852845034860055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469489279349079399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffbbeec52770a1c4883801630c2819ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  entity: {fileID: 2193990514561462931}
+  range: 1
 --- !u!1 &4603459746867375223
 GameObject:
   m_ObjectHideFlags: 0

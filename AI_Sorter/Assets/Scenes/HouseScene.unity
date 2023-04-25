@@ -23484,7 +23484,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802556334}
   m_LocalRotation: {x: -0, y: 0.8660259, z: -0.49999917, w: 0}
-  m_LocalPosition: {x: 1.82, y: 8.25, z: -16.49}
+  m_LocalPosition: {x: 1.5, y: 8.25, z: -16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33498,17 +33498,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 276958a9a3f66234987cbd91912cc34f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1140044972 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 213614673678102144, guid: 2c0aa17f586e6144695f226782c2eb5f, type: 3}
-  m_PrefabInstance: {fileID: 469489279656264350}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d79299470755ccc4094e0e6b4143299d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1140808311
@@ -51411,7 +51400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca4194a491aa0e43ac79952247e6a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 0
+  debug: 1
   size: {x: 20, y: 2.5, z: 20}
   gap: 0.5
   minObstacleDistance: 0.4
@@ -70420,7 +70409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 469489279349079396, guid: 2c0aa17f586e6144695f226782c2eb5f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7542852
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 469489279349079396, guid: 2c0aa17f586e6144695f226782c2eb5f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -70428,7 +70417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 469489279349079396, guid: 2c0aa17f586e6144695f226782c2eb5f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.623562
+      value: -20.5
       objectReference: {fileID: 0}
     - target: {fileID: 469489279349079396, guid: 2c0aa17f586e6144695f226782c2eb5f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -70465,7 +70454,11 @@ PrefabInstance:
     - target: {fileID: 2193990514561462931, guid: 2c0aa17f586e6144695f226782c2eb5f, type: 3}
       propertyPath: brain
       value: 
-      objectReference: {fileID: 1140044972}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551037997211817195, guid: 2c0aa17f586e6144695f226782c2eb5f, type: 3}
+      propertyPath: debug
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7380253828791647242, guid: 2c0aa17f586e6144695f226782c2eb5f, type: 3}
       propertyPath: debug
       value: 1

@@ -9,15 +9,19 @@ public abstract class State
 	[SerializeField] protected NPCState id = NPCState.None;
 
 	protected bool isActive = false;
+	protected BrainComponent brain = null;
 	protected Character character = null;
 	
 	public NPCState GetID => id;
 
+	public State(NPCState _id) => id = _id;
+
 	public void SetActive(bool _value) => isActive = _value;
 	
-	public void Init(BrainComponent _brain)
+	public virtual void Init(BrainComponent _brain)
 	{
-		character = _brain.GetCharacter;
+		brain = _brain;
+		character = brain.GetCharacter;
 	}
 
 	public virtual void Enter()

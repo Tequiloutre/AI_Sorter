@@ -14,7 +14,8 @@ public class BrainComponent : Component
 	public Character GetCharacter => (Character) entity;
 	public float GetMinIdleTime => minIdleTime;
 	public float GetMaxIdleTime => maxIdleTime;
-
+	public State GetState(NPCState _stateID) => states[_stateID];
+	
 	// private void OnAskInteract(IInteractable _interactable) => TriggerEvent(NPCEvent.OnAskInteract);
 
 	// protected void TriggerEvent(int _event)
