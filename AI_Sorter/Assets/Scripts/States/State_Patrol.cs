@@ -30,7 +30,10 @@ public class State_Patrol : State
 	{
 		base.Update();
 		sight.SearchTarget();
-		if (CheckPosition())
+		
+		Vector3 _position = character.transform.position;
+
+		if (!brain.GetNextPathPoint(_position, out Vector3 _targetPosition))
 		{
 			if (!isWaiting)
 			{
@@ -45,25 +48,14 @@ public class State_Patrol : State
 			}
 			idleTime = 0.0f;
 			isWaiting = false;
-			if (!GetNewTargetPosition()) return;
+			
+			brain.ComputePath(_position, Room.Instance.GetRandomPoint());
+			brain.ResetPathIndex();
+			return;
 		}
-		movement.MoveTowards((targetPosition.ResetY() - character.transform.position.ResetY()).normalized * (movement.GetMoveSpeed * Time.deltaTime));
-	}
-
-	private bool GetNewTargetPosition()
-	{
-		bool _ok = false;
-		while (!_ok)
-		{
-			if (!NavMesh.Instance.GetRandomPoint(out targetPosition)) return false;
-			_ok = movement.CheckSafeMove(character.transform.position, targetPosition);
-		}
-		return true;
-	}
-
-	private bool CheckPosition()
-	{
-		return Vector3.Distance(character.transform.position.ResetY(), targetPosition.ResetY()) <= 0.1f;
+		
+		Vector3 _direction = (_targetPosition.ResetY() - _position.ResetY()).normalized * (movement.GetMoveSpeed * Time.deltaTime);
+		movement.MoveTowards(_direction);
 	}
 
 	private void OnTargetDetected(Transform _target)

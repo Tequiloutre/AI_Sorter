@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class State_Interact : State
@@ -23,25 +22,44 @@ public class State_Interact : State
 
 	public void SetTarget(Transform _target)
 	{
-		Debug.Log("Set Target");
 		interactables.Clear();
 		interactables.Add(_target);
-		activeTarget = _target;
 	}
 
-	private void OnTargetDetected(Transform _target)
+	public override void Update()
 	{
-		if (!isActive) return;
-		if (_target.GetComponent<IInteractable>() == null || interactables.Contains(_target)) return;
-		interactables.Add(_target);
-		CheckNearestTarget();
-	}
-
-	private void CheckNearestTarget()
-	{
+		base.Update();
+		
+		if (!activeTarget && !GetNearestTarget())
+		{
+			brain.SetActiveState(NPCState.Patrol);
+			return;
+		}
+		
 		Vector3 _position = character.transform.position;
+		
+		if (Vector3.Distance(_position, activeTarget.position) <= interaction.GetRange)
+		{
+			activeTarget.GetComponent<IInteractable>().Interact(character);
+			RemoveActiveTarget();
+		}
+		
+		if (!brain.GetNextPathPoint(_position, out Vector3 _targetPosition)) return;
+		Vector3 _direction = (_targetPosition.ResetY() - _position.ResetY()).normalized * (movement.GetMoveSpeed * Time.deltaTime);
+		movement.MoveTowards(_direction);
+	}
+	
+	private bool GetNearestTarget()
+	{
+		Transform _previousTarget = activeTarget;
 		int _count = interactables.Count;
-		if (_count == 0) return;
+		if (_count == 0)
+		{
+			activeTarget = null;
+			return false;
+		}
+		
+		Vector3 _position = character.transform.position;
 		activeTarget = interactables[0];
 		for (int i = 1; i < _count; ++i)
 		{
@@ -49,25 +67,20 @@ public class State_Interact : State
 			if (Vector3.Distance(_position, _target.position) < Vector3.Distance(_position, activeTarget.position))
 				activeTarget = _target;
 		}
-	}
 
-	public override void Update()
+		if (activeTarget == _previousTarget) return true;
+		
+		brain.ComputePath(_position, activeTarget.position);
+		brain.ResetPathIndex();
+		return true;
+	}
+	
+	private void OnTargetDetected(Transform _target)
 	{
-		base.Update();
-		if (!activeTarget && interactables.Count == 0)
-		{
-			brain.SetActiveState(NPCState.Patrol);
-			return;
-		}
-		Vector3 _position = character.transform.position;
-		if (Vector3.Distance(_position, activeTarget.position) > interaction.GetRange)
-		{
-			Vector3 _direction = (activeTarget.position.ResetY() - _position.ResetY()).normalized * (movement.GetMoveSpeed * Time.deltaTime);
-			movement.MoveTowards(_direction);
-			return;
-		}
-		activeTarget.GetComponent<IInteractable>().Interact(character);
-		RemoveActiveTarget();
+		if (!isActive) return;
+		if (_target.GetComponent<IInteractable>() == null || interactables.Contains(_target)) return;
+		interactables.Add(_target);
+		GetNearestTarget();
 	}
 
 	private void RemoveActiveTarget()
@@ -75,6 +88,5 @@ public class State_Interact : State
 		if (!activeTarget) return;
 		interactables.Remove(activeTarget);
 		activeTarget = null;
-		if (interactables.Count > 0) CheckNearestTarget();
 	}
 }
