@@ -11,7 +11,8 @@ public class SightComponent : Component
 	[SerializeField] private Vector3 offset = Vector3.zero;
 	[SerializeField] private float range = 5.0f,
 		angle = 90.0f;
-	[SerializeField] private LayerMask detectionlayer = 0;
+	[SerializeField] private LayerMask detectionlayer = 0,
+		obstacleLayer = 0;
 	[SerializeField] private List<Collider> targets = new List<Collider>();
 
 	private bool targetDetected = false;
@@ -30,9 +31,10 @@ public class SightComponent : Component
 		for (int i = 0; i < _hitCount; ++i)
 		{
 			Collider _hit = _hits[i];
-			if (_hit.transform == entity.transform || targets.Contains(_hit)) continue;
-			Vector3 _direction = (_hit.transform.position - _originPosition).ResetY().normalized;
-			if (Vector3.Dot(_direction, origin.forward) < Mathf.Cos(angle / 2.0f * Mathf.Deg2Rad)) continue;
+			if (_hit.transform == entity.transform
+				|| targets.Contains(_hit)
+				|| !IsInAngle(_hit.transform, origin, angle)
+				|| !IsVisible(_hit.transform, _hit.bounds.max.y - _hit.transform.position.y, origin, obstacleLayer)) continue;
 			_targets.Add(_hit);
 			targets.Add(_hit);
 			OnTargetDetected?.Invoke(_hit.transform);
@@ -48,6 +50,23 @@ public class SightComponent : Component
 		}
 		
 		targetDetected = targets.Count > 0;
+	}
+
+	private bool IsInAngle(Transform _target, Transform _origin, float _angle)
+	{
+		Vector3 _direction = (_target.position.ResetY() - _origin.position.ResetY()).normalized;
+		return Vector3.Dot(_origin.forward, _direction) > Mathf.Cos(_angle / 2.0f * Mathf.Deg2Rad);
+	}
+
+	private bool IsVisible(Transform _target, float _targetHeight, Transform _origin, LayerMask _obstacleLayer)
+	{
+		bool _isVisible = false;
+		for (int i = 0; i < 5; ++i)
+		{
+			Vector3 _targetPosition = _target.position + Vector3.up * (_targetHeight / 5.0f);
+			if (!Physics.Linecast(_origin.position, _targetPosition, _obstacleLayer)) _isVisible = true;
+		}
+		return _isVisible;
 	}
 
 	protected override void DrawDebug()
