@@ -30,9 +30,11 @@ public class State_Interact : State
 	{
 		base.Update();
 		
+		sight.SearchTarget();
+		
 		if (!activeTarget && !GetNearestTarget())
 		{
-			brain.SetActiveState(NPCState.Patrol);
+			brain.SetActiveState(NPCState.Store);
 			return;
 		}
 		

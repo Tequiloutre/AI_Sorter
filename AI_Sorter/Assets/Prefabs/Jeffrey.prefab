@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 469489279349079396}
   - component: {fileID: 659534923651742325}
-  - component: {fileID: 4381443121476273256}
   - component: {fileID: 2193990514561462931}
   - component: {fileID: 5551037997211817195}
   - component: {fileID: 8200103481544624294}
@@ -54,27 +53,6 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
---- !u!95 &4381443121476273256
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469489279349079399}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dabe5a6317bcfe44ca192d57fe56894d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2193990514561462931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2eccfe63113ee344b10a405532c0241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 1
+  debug: 0
   entity: {fileID: 2193990514561462931}
   origin: {fileID: 4607497911891233541}
   offset: {x: 0, y: 0.1, z: 0.4}
@@ -171,7 +149,7 @@ MonoBehaviour:
     m_Bits: 512
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 384
   targets: []
 --- !u!114 &2166852845034860055
 MonoBehaviour:

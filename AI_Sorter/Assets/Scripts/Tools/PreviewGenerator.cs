@@ -25,7 +25,7 @@ public static class PreviewGenerator
 			_importer.SaveAndReimport();
 		}
 		
-		AssetDatabase.Refresh();
+		AssetDatabase.Refresh(ImportAssetOptions.ForceUpdate);
 	}
 	#endif
 }

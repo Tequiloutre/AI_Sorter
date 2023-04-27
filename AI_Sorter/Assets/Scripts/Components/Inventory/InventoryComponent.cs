@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class InventoryComponent : Component
@@ -9,6 +10,7 @@ public class InventoryComponent : Component
 	[SerializeField] private List<ItemSlot> slots = new List<ItemSlot>();
 
 	public List<ItemSlot> GetSlots => slots;
+	public int GetTotalCount => slots.Sum(_itemSlot => _itemSlot.Count);
 
 	public bool Contains(ItemData _item, out int _index)
 	{
