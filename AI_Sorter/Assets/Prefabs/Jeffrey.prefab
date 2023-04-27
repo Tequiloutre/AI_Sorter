@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30460d08740a4934eb65e15624889266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 0
+  debug: 1
   entity: {fileID: 2193990514561462931}
   minIdleTime: 1
   maxIdleTime: 5

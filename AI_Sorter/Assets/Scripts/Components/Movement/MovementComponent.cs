@@ -11,6 +11,7 @@ public class MovementComponent : Component
 	[SerializeField] protected float moveSpeed = 4.0f;
 	[SerializeField] protected float rotateSpeed = 5.0f;
 	[SerializeField] protected LayerMask terrainLayer = 0;
+	[SerializeField] private Vector3 direction = Vector3.zero;
 
 	private Vector3 lastPosition = Vector3.zero;
 
@@ -41,6 +42,7 @@ public class MovementComponent : Component
 	public void Move(Vector3 _direction)
 	{
 		if (!canMove) _direction = Vector3.zero;
+		direction = _direction;
 		lastPosition = transform.position;
 		transform.position += _direction;
 		if (_direction.magnitude <= float.Epsilon)

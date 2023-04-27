@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class BrainComponent : Component
 {
+	[SerializeField] protected string activeStateID = "";
 	[SerializeField] protected float minIdleTime = 1.0f,
 		maxIdleTime = 5.0f;
 
@@ -59,6 +61,7 @@ public class BrainComponent : Component
 			activeState.SetActive(false);
 		}
 		activeState = states[_stateID];
+		activeStateID = activeState.GetID.ToString();
 		activeState.SetActive(true);
 		activeState.Enter();
 	}

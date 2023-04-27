@@ -6001,7 +6001,6 @@ GameObject:
   - component: {fileID: 207634900}
   - component: {fileID: 207634901}
   - component: {fileID: 207634902}
-  - component: {fileID: 207634903}
   m_Layer: 0
   m_Name: ===MANAGERS===
   m_TagString: Untagged
@@ -6085,19 +6084,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: {fileID: 11400000, guid: 29a1126c5ba3d3b4ab62b9dcd294022a, type: 2}
---- !u!114 &207634903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 207634897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54eca1c2d89ce0a4c89494d5b355beb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  testInventory: {fileID: 0}
 --- !u!114 &207634904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37189,6 +37175,10 @@ PrefabInstance:
     - target: {fileID: 469489279349079399, guid: 2c0aa17f586e6144695f226782c2eb5f, type: 3}
       propertyPath: m_Name
       value: Jeffrey
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200103481544624294, guid: 2c0aa17f586e6144695f226782c2eb5f, type: 3}
+      propertyPath: moveSpeed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c0aa17f586e6144695f226782c2eb5f, type: 3}
